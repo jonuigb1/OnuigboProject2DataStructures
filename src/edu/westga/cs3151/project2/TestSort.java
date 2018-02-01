@@ -1,5 +1,7 @@
 package edu.westga.cs3151.project2;
 
+import java.io.PrintWriter;
+
 public class TestSort {
 	
 
@@ -21,12 +23,18 @@ public class TestSort {
 			System.out.print(array[i]+" ");
 		}
 		System.out.println();
+		
 		long start = System.currentTimeMillis();
+		
 		Sort.insertionSort(array);
+		
 		long end = System.currentTimeMillis();
+		
 		long elapsed = end - start;
 		for(int i=0;i<max;i++) {
-			System.out.print(array[i]+" ");
+			System.out.println(i+"\t"+array[i]+ " ");
+			PrintWriter writer = null;
+			
 		}
 	}
 
