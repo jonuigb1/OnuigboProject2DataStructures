@@ -1,5 +1,6 @@
 package edu.westga.cs3151.project2;
 
+import java.io.File;
 import java.io.PrintWriter;
 
 public class TestSort {
@@ -7,14 +8,14 @@ public class TestSort {
 
 	public static void main(String[] args) {
 		
-		int max = 20;
+		int max = 100000;
 		Integer[] array = new Integer[max];
 		
 		for(int i=0;i<max;i++) {
 			array[i] = i;
 		}
 		
-		for(int i=0;i<max;i++) {
+		for(int i=0;i<max;i+=100) {
 			System.out.print(array[i]+" ");
 		}
 		System.out.println();
@@ -24,18 +25,33 @@ public class TestSort {
 		}
 		System.out.println();
 		
-		long start = System.currentTimeMillis();
+		//long start = System.currentTimeMillis();
 		
 		Sort.insertionSort(array);
 		
-		long end = System.currentTimeMillis();
+		//long end = System.currentTimeMillis();
 		
-		long elapsed = end - start;
-		for(int i=0;i<max;i++) {
-			System.out.println(i+"\t"+array[i]+ " ");
+		//long elapsed = end - start;
+		
+			
 			PrintWriter writer = null;
+			try {
+				writer = new PrintWriter(new File("Desktop/data.csv"));
+			}catch(Exception err) {};
+			
+			long start,end,elapsed;
+			for(int i=1;i<50;i++) {
+				start = System.currentTimeMillis();
+			    Sort.insertionSort(array);
+				end = System.currentTimeMillis();
+				elapsed = end - start;
+				writer.write(i+","+elapsed);
+				writer.println();
+			}
+			writer.close();
+			System.out.println("done");
 			
 		}
-	}
+	
 
 }
