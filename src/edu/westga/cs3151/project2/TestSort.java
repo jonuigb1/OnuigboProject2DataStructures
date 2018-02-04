@@ -16,7 +16,7 @@ public class TestSort {
 		}
 		
 		for(int i=0;i<max;i+=100) {
-			System.out.print(array[i]+" ");
+			System.out.println(array[i]+" ");
 		}
 		System.out.println();
 		Sort.shuffle(array);
@@ -36,11 +36,11 @@ public class TestSort {
 			
 			PrintWriter writer = null;
 			try {
-				writer = new PrintWriter(new File("Desktop/data.csv"));
+				writer = new PrintWriter(new File("data.csv"));
 			}catch(Exception err) {};
 			
 			long start,end,elapsed;
-			for(int i=1;i<50;i++) {
+			for(int i=10;i<10000;i++) {
 				start = System.currentTimeMillis();
 			    Sort.insertionSort(array);
 				end = System.currentTimeMillis();
