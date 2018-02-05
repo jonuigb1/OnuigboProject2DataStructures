@@ -8,7 +8,7 @@ public class TestSort {
 
 	public static void main(String[] args) {
 		
-		int max = 100000;
+		int max = 10000;
 		Integer[] array = new Integer[max];
 		
 		for(int i=0;i<max;i++) {
@@ -21,17 +21,32 @@ public class TestSort {
 		System.out.println();
 		Sort.shuffle(array);
 		for(int i=0;i<max;i++) {
-			System.out.print(array[i]+" ");
+			System.out.print(","+array[i]+" ");
+		}
+		System.out.println();
+		Sort.insertionSort(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(","+array[i]+" ");
 		}
 		System.out.println();
 		Sort.shuffle(array);
 		for(int i=0;i<max;i++) {
-			System.out.print(array[i]+" ");
+			System.out.print(","+array[i]+" ");
 		}
 		System.out.println();
 		Sort.bubbleSort(array);
 		for(int i=0;i<max;i++) {
-			System.out.print(array[i]+" ");
+			System.out.print(","+array[i]+" ");
+		}
+		System.out.println();
+		Sort.shuffle(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(","+array[i]+" ");
+		}
+		System.out.println();
+		Sort.selectionSort(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(","+array[i]+" ");
 		}
 		
 		//long start = System.currentTimeMillis();
@@ -60,6 +75,14 @@ public class TestSort {
 			for(int i = 0; i<10000 ; i+=100) {
 				start = System.currentTimeMillis();
 				Sort.bubbleSort(array);
+				end = System.currentTimeMillis();
+				elapsed = end -start;
+				writer.write(i+","+ elapsed);
+				writer.println();
+			}
+			for(int i = 0; i<10000 ; i+=100) {
+				start = System.currentTimeMillis();
+				Sort.selectionSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
 				writer.write(i+","+ elapsed);
