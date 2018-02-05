@@ -58,4 +58,42 @@ public class Sort {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	public static <T extends Comparable<T>> void mergeSort(T[] data) {
+		T[] temp = (T[]) new Comparable[data.length];
+		mergeSort(data, temp, 0, data.length);
+	}
+
+	private static <T extends Comparable<T>> void mergeSort(T[] data, T[] buffer, int min, int max) {
+		if (max - min <= 1) {
+			return;
+		}
+		int mid = (min + max) / 2;
+		mergeSort(data, buffer, min, mid);
+		mergeSort(data, buffer, mid, max);
+		merge(data, buffer, min, mid, max);
+	}
+
+	private static <T extends Comparable<T>> void merge(T[] data, T[] buffer, int min, int mid, int max) {
+		int i = min;
+		int j = mid;
+		int current = min;
+		while ((i < mid) && (j < max)) {
+			if (data[i].compareTo(data[j]) < 0) {
+				buffer[current++] = data[i++];
+			} else {
+				buffer[current++] = data[j++];
+			}
+		}
+		while (i < mid) {
+			buffer[current++] = data[i++];
+		}
+		while (j < max) {
+			buffer[current++] = data[j++];
+		}
+		for (current = min; current < max; current++) {
+			data[current] = buffer[current];
+		}
+	}
+
 }
