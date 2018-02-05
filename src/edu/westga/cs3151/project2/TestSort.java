@@ -24,6 +24,15 @@ public class TestSort {
 			System.out.print(array[i]+" ");
 		}
 		System.out.println();
+		Sort.shuffle(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(array[i]+" ");
+		}
+		System.out.println();
+		Sort.bubbleSort(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(array[i]+" ");
+		}
 		
 		//long start = System.currentTimeMillis();
 		
@@ -40,7 +49,7 @@ public class TestSort {
 			}catch(Exception err) {};
 			
 			long start,end,elapsed;
-			for(int i=10;i<10000;i++) {
+			for(int i=0 ; i<10000 ; i+= 100) {
 				start = System.currentTimeMillis();
 			    Sort.insertionSort(array);
 				end = System.currentTimeMillis();
@@ -48,10 +57,21 @@ public class TestSort {
 				writer.write(i+","+elapsed);
 				writer.println();
 			}
+			for(int i = 0; i<10000 ; i+=100) {
+				start = System.currentTimeMillis();
+				Sort.bubbleSort(array);
+				end = System.currentTimeMillis();
+				elapsed = end -start;
+				writer.write(i+","+ elapsed);
+				writer.println();
+			}
 			writer.close();
 			System.out.println("done");
 			
 		}
+	    
+	
+	
 	
 
 }
