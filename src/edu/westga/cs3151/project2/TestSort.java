@@ -10,13 +10,16 @@ public class TestSort {
 		
 		int max = 10000;
 		Integer[] array = new Integer[max];
+	 
+		//for(int j = 0 ; j< 20; j++) {
+			
 		
 		for(int i=0;i<max;i++) {
 			array[i] = i;
 		}
 		
 		for(int i=0;i<max;i+=100) {
-			System.out.println(","+array[i]+" ");
+			System.out.println(+array[i]+" ");
 		}
 		System.out.println();
 		Sort.shuffle(array);
@@ -69,11 +72,12 @@ public class TestSort {
 		}
 	
 	
+	
 
 		
 		//long start = System.currentTimeMillis();
 		
-		Sort.insertionSort(array);
+		//Sort.insertionSort(array);
 		
 		//long end = System.currentTimeMillis();
 		
@@ -87,7 +91,6 @@ public class TestSort {
 			
 			long start,end,elapsed;
 			for(int i=0 ; i<10000 ; i+= 100) {
-				//System.out.println(i + "\t" + Sort.insertionSort(array));
 				start = System.currentTimeMillis();
 			    Sort.insertionSort(array);
 				end = System.currentTimeMillis();
@@ -136,5 +139,6 @@ public class TestSort {
 			System.out.println("done");
 			
 		}
+	//}
 	    
 }
