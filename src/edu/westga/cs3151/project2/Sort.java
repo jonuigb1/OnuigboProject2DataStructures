@@ -96,4 +96,41 @@ public class Sort {
 		}
 	}
 
+	public static <T extends Comparable<T>> void quickSort(T[] data) {
+		quickSort(data, 0, data.length - 1);
+	}
+
+	public static <T extends Comparable<T>> void quickSort(T[] data, int min, int max) {
+		if (min >= max) {
+			return;
+		}
+		int mid = parition(data, min, max);
+		if (min < mid - 1) {
+			quickSort(data, min, mid);
+		}
+		if (mid < max) {
+			quickSort(data, mid, max);
+		}
+	}
+
+	private static <T extends Comparable<T>> int parition(T[] data, int min, int max) {
+		T pivot = data[min];
+		int index = min;
+		int j = max;
+		while (index <= j) {
+			while (data[index].compareTo(pivot) < 0) {
+				index++;
+			}
+			while (data[j].compareTo(pivot) > 0) {
+				j--;
+			}
+			if (index <= j) {
+				swap(data, index, j);
+				index++;
+				j--;
+			}
+		}
+		return index;
+	}
+
 }

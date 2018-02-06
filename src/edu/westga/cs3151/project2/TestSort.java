@@ -16,7 +16,7 @@ public class TestSort {
 		}
 		
 		for(int i=0;i<max;i+=100) {
-			System.out.println(array[i]+" ");
+			System.out.println(","+array[i]+" ");
 		}
 		System.out.println();
 		Sort.shuffle(array);
@@ -56,8 +56,20 @@ public class TestSort {
 		System.out.println();
 		Sort.mergeSort(array);
 		for(int i=0;i<max;i++) {
-			System.out.print(array[i]+" ");
+			System.out.print(","+array[i]+" ");
 		}
+		Sort.shuffle(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(","+array[i]+" ");
+		}
+		System.out.println();
+		Sort.quickSort(array);
+		for(int i=0;i<max;i++) {
+			System.out.print(","+array[i]+" ");
+		}
+	
+	
+
 		
 		//long start = System.currentTimeMillis();
 		
@@ -100,6 +112,7 @@ public class TestSort {
 				writer.write(i+","+ elapsed);
 				writer.println();
 			}
+			
 			for(int i = 0; i<10000 ; i+=100) {
 				start = System.currentTimeMillis();
 				Sort.mergeSort(array);
@@ -108,13 +121,19 @@ public class TestSort {
 				writer.write(i+","+ elapsed);
 				writer.println();
 			}
+			
+			for(int i = 0; i<10000 ; i+=100) {
+				start = System.currentTimeMillis();
+				Sort.quickSort(array);
+				end = System.currentTimeMillis();
+				elapsed = end -start;
+				writer.write(i+","+ elapsed);
+				writer.println();
+			}
+			
 			writer.close();
 			System.out.println("done");
 			
 		}
 	    
-	
-	
-	
-
 }
