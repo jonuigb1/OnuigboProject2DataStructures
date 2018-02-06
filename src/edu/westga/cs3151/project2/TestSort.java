@@ -101,7 +101,7 @@ public class TestSort {
 				Sort.bubbleSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+i+","+ elapsed);
+				writer.write(","+","+i+","+ elapsed);
 				writer.println();
 			}
 			
@@ -110,7 +110,7 @@ public class TestSort {
 				Sort.selectionSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+i+","+ elapsed);
+				writer.write(","+","+","+","+i+","+ elapsed);
 				writer.println();
 			}
 			
@@ -119,7 +119,7 @@ public class TestSort {
 				Sort.mergeSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+","+i+","+ elapsed);
+				writer.write(","+","+","+","+","+","+i+","+ elapsed);
 				writer.println();
 			}
 			
@@ -128,7 +128,7 @@ public class TestSort {
 				Sort.quickSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+","+","+ i +","+ elapsed);
+				writer.write(","+","+","+","+","+","+","+","+ i +","+ elapsed);
 				writer.println();
 			}
 			
