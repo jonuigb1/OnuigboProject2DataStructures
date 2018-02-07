@@ -96,42 +96,42 @@ public class TestSort {
 				end = System.currentTimeMillis();
 				elapsed = end - start;
 				writer.write(i+","+elapsed);
-				writer.println();
-			}
+				
 			
-			for(int i = 0; i<10000 ; i+=100) {
+			
+			
 				start = System.currentTimeMillis();
 				Sort.bubbleSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+i+","+ elapsed);
-				writer.println();
-			}
+				writer.write(","+i+","+ elapsed);
+				
 			
-			for(int i = 0; i<10000 ; i+=100) {
+			
+			
 				start = System.currentTimeMillis();
 				Sort.selectionSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+","+","+i+","+ elapsed);
-				writer.println();
-			}
+				writer.write(","+i+","+ elapsed);
+				
 			
-			for(int i = 0; i<10000 ; i+=100) {
+			
+			
 				start = System.currentTimeMillis();
 				Sort.mergeSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+","+","+","+","+i+","+ elapsed);
-				writer.println();
-			}
+				writer.write(","+i+","+ elapsed);
+				
 			
-			for(int i = 0; i<10000 ; i+=100) {
+			
+			
 				start = System.currentTimeMillis();
 				Sort.quickSort(array);
 				end = System.currentTimeMillis();
 				elapsed = end -start;
-				writer.write(","+","+","+","+","+","+","+","+ i +","+ elapsed);
+				writer.write(","+ i +","+ elapsed);
 				writer.println();
 			}
 			
